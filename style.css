@@ -453,7 +453,6 @@ ul li {
     .newslatter form input:first-child {
         display: inline-block;
     width: 100%;
-    padding: 14px 130px 14px 15px;
     border: 2px solid #f90040;
     outline: none;
     border-radius: 30px;
