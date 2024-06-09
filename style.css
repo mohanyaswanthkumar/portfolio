@@ -419,11 +419,10 @@ ul li {
     .content {
         left: 5%;
         top: 45%;
-        max-width:fit-content;
     }
 
   .newslatter{
-    margin-right: auto;
+    margin-right: 75px;
   }
 
     .education,
