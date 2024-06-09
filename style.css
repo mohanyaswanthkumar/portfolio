@@ -523,4 +523,9 @@ ul li {
     .details > div > a > i:hover {
         transform: scale(1.2);
     }
+    .newslatter{
+        position: relative;
+        left: 10%;
+        top: 5%;
+    }
 }
