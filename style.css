@@ -418,13 +418,8 @@ ul li {
         transform: scale(1.5);
     }
 
-    .content>.info{
-        margin-top: 55px;
-
-    }
-
-    .content>.newslatter>form{
-        margin-right: auto;
+    .content {
+        top: 55%;
     }
 
   
