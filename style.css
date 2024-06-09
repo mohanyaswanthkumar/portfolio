@@ -310,8 +310,6 @@ ul li {
 
 /* mobile */
 
-
-
 /* General styling for mobile view */
 @media only screen and (max-width: 768px) {
     nav {
@@ -420,7 +418,8 @@ ul li {
 
     .content {
         left: 5%;
-        top: 55%;
+        top: 45%;
+        max-width:fit-content;
     }
 
   
