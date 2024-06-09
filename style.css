@@ -418,9 +418,13 @@ ul li {
         transform: scale(1.5);
     }
 
-    .content {
-        left: 5%;
-        top: 55%;
+    .content>.info{
+        margin-top: 55px;
+
+    }
+
+    .content>.newslatter>form{
+        margin-right: auto;
     }
 
   
