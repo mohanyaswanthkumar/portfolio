@@ -310,6 +310,8 @@ ul li {
 
 /* mobile */
 
+
+
 /* General styling for mobile view */
 @media only screen and (max-width: 768px) {
     nav {
@@ -317,11 +319,14 @@ ul li {
         width: 100%;
         z-index: 1000;
         display: flex;
-        justify-content: flex-end; 
-        flex-direction: column; 
+        justify-content: space-between; 
+        align-items: center;
     }
 
-
+    nav a{
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
 
     .logo {
         color: white;
@@ -329,23 +334,61 @@ ul li {
         margin-right: auto; 
     }
 
-    nav ul {
+    .nav-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 24px;
+        width: 30px;
+    }
+
+    .nav-toggle .hamburger,
+    .nav-toggle .hamburger::before,
+    .nav-toggle .hamburger::after {
+        background-color: white;
+        border-radius: 2px;
+        content: '';
+        display: block;
+        height: 2px;
+        width: 100%;
+        transition: all 0.3s linear;
+    }
+
+    .nav-toggle .hamburger::before {
+        transform: translateY(-8px);
+    }
+
+    .nav-toggle .hamburger::after {
+        transform: translateY(8px);
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
         list-style-type: none;
         margin: 0;
         padding: 0;
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 200px;
+        border-radius: 10px;
         text-align: center;
-        margin-top: 20px; 
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        left: 30%;
     }
 
-    nav ul li {
+    .nav-list.show {
+        display: flex;
+    }
+
+    .nav-list li {
         padding: 10px;
     }
 
-    nav ul li a {
+    .nav-list li a {
         color: white;
         text-decoration: none;
         font-weight: bold;
@@ -353,11 +396,11 @@ ul li {
         transition: color 0.3s;
     }
 
-    nav ul li a:hover {
+    .nav-list li a:hover {
         color: #ffcc00;
     }
 
-   nav .btn {
+    nav .btn {
         background-color: #f90040;
         color: white;
         text-decoration: none;
@@ -374,9 +417,10 @@ ul li {
     nav .btn:hover {
         transform: scale(1.5);
     }
+
     .content {
         left: 5%;
-        top: 45%;
+        top: 55%;
     }
 
   
@@ -413,11 +457,26 @@ ul li {
 }
 
     .newslatter form input:first-child {
-        padding: 10px;
+        display: inline-block;
+    width: 100%;
+    padding: 14px 130px 14px 15px;
+    border: 2px solid #f90040;
+    outline: none;
+    border-radius: 30px;
     }
 
     .newslatter form input:last-child {
-        padding: 8px 15px;
+        display: inline-block;
+        position: absolute;
+        outline: none;
+        border: none;
+        border-radius: 30px;
+        background-color: #f90040;
+        padding: 10px 30px;
+        color: white;
+        top: 16px;
+        right: 15px;
+        box-shadow: 0px 0px 5px #000,0px 0px 15px #858585;
     }
 
     .mained > h2 {
