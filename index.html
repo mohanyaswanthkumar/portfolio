@@ -1,295 +1,525 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PortFolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Meyawo landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Portfolio</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Bootstrap + Meyawo main styles -->
+    <link rel="stylesheet" href="assets/css/meyawo.css">
 </head>
-    <!-- Hero Section Starts-->
-    <div class="hero" id="hero">
-        <nav>
-            <h2 class="logo">Portfo<span>lio</span></h2>
-            <ul class="nav-list">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#project">Projects</a></li>
-                <li><a href="#skill">Skills</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-            <a href="2100030648-Bitra Mohan Yaswanth Kumar.pdf" class="btn" download>Resume</a>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-        </nav>
-        <div class="content">
-            <div>
-                <h4>Hello, I'm </h4>
-            <h1>Mohan <span>Yaswanth</span> Kumar</h1>
-            <h3>I'm a Web Developer</h3>
-            </div>
-            <div class="newslatter">
-                <form action="mailto:bitramohanyaswanthkumar@gmail.com" method="post" enctype="text/plain" target="_blank">
-                    <input type="email" name="email" id="email" placeholder="Enter Your Email">
-                    <input type="submit" name="submit" value="Let's Start">
-                </form>
-            </div>
-        </div>
-    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.querySelector('.nav-toggle');
-            const navList = document.querySelector('.nav-list');
-    
-            navToggle.addEventListener('click', function() {
-                navList.classList.toggle('show');
-            });
-    
-            const navLinks = document.querySelectorAll('.nav-list li a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navList.classList.remove('show');
-                });
-            });
-        });
-    </script>
-    
-<!--Education Section-->
-<div class="mained" id="education">
-    <h2 >Education</h2>
-<div class="education">
-    <div class="ed1">
-        <h3>KL University</h3>
-        <p>B.Tech Computer Science & Engineering</p> 
-           <p><i class="fas fa-map-marker-alt"></i> Vijayawada, Andhra Pradesh</p>
-            <p>CGPA: 9.59</p>
-            <span> <p>(Pursuing)</p></span>
-    </div>
-    <div class="ed2">
-        <h3>Narayana Junior College</h3>
-            <p>Intermediate MPC</p>
-            <p><i class="fas fa-map-marker-alt"></i> Vijayawada, Andhra Pradesh</p>
-            <p>Marks: 949/1000</p>
-            <p><i class='far fa-calendar' style='font-size:30px;color:red'></i> June 2019 - March 2021</p>
-    </div>
-    <div class="ed3">
-        <h3>Narayana E-techno Schools</h3>
-        <p>Xth Standard SSC</p>
-        <p><i class="fas fa-map-marker-alt"></i> Chirala, Andhra Pradesh</p>
-        <p>CGPA: 9.3</p>
-        <p><i class='far fa-calendar' style='font-size:30px;color:red'></i> June 2018-March 2019</p>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const educationCarousel = document.querySelector('.education');
-            const educationItems = document.querySelectorAll('.education > div');
-            const prevButton = document.querySelector('.prev');
-            const nextButton = document.querySelector('.next');
-            let currentIndex = 0;
-    
-            function updateCarousel() {
-                const offset = -currentIndex * 100;
-                educationCarousel.style.transform = `translateX(${offset}%)`;
-            }
-    
-            function handleResize() {
-                if (window.innerWidth <= 768) {
-                    // Mobile view: enable carousel
-                    educationCarousel.style.display = 'flex';
-                    updateCarousel();
-                } else {
-                    // Full screen view: reset styles
-                    educationCarousel.style.display = 'grid';
-                    educationCarousel.style.transform = 'none';
-                }
-            }
-    
-            prevButton.addEventListener('click', function() {
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : educationItems.length - 1;
-                updateCarousel();
-            });
-    
-            nextButton.addEventListener('click', function() {
-                currentIndex = (currentIndex < educationItems.length - 1) ? currentIndex + 1 : 0;
-                updateCarousel();
-            });
-    
-            window.addEventListener('resize', handleResize);
-            handleResize(); // Initial check
-        });
-    </script>
-    
-</div>
-<div class="certificates" id="certificates">
-    <h2>Certifications</h2>
-    <div class="cert1" style="display: flex; align-items: center;">
-        <i class="fab fa-aws"></i>
-        <h3 style="margin-left: 5px;">Aws Cloud Practitioner</h3>
-    </div>
-    <div style="margin-top: 30px;margin-left: 200px;">
-        <a href="https://www.credly.com/badges/61326c10-1bd4-435d-894c-6074fdbc6a25">Validate at</a>
-    </div>
-    <div class="cert2" style="display: flex; align-items: center;">
-        <i class="fab fa-redhat"></i>
-        <h3 style="margin-left: 5px;margin-top: 12px;"> Red Hat Certified Enterprise Application Developer</h3>
-    </div>
-    <div style="margin-top: 30px;margin-left: 200px;">
-        <a href="#">Validate at</a>
-    </div>
-</div>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
-</div>
-<!--Skills Section  -->
-<div class="skills" id="skill">
-    <h2 id="skills">Skills</h2>
-    <div class="skill-section">
-        <div class="s1">
-            <h4>Web Development Skills</h4>
-            <ul>
-                <li><div class="cert2" style="display: flex; align-items: center;">
-                    <img src="html.png" width="50px" height="50px" style="border-radius: 50%;">
-                    <h3 id="up">HTML</h3>
-                </div></li>
-                <li><div class="cert2" style="display: flex; align-items: center;">
-                    <img src="css.png" width="50px" height="50px" style="border-radius: 50%;">
-                    <h3 id="up">CSS</h3>
-                </div></li>
-                <li><div class="cert2" style="display: flex; align-items: center;">
-                    <img src="js.png" width="50px" height="50px" style="border-radius: 50%;">
-                    <h3 id="up">Java Script</h3>
-                </div></li>
-                <li><div class="cert2" style="display: flex; align-items: center;">
-                    <img src="reactjs.png" width="50px" height="50px" style="border-radius: 50%;">
-                    <h3 id="up">React JS</h3>
-                </div></li>
-                <li><div class="cert2" style="display: flex; align-items: center;">
-                    <img src="sprintboot.png" width="50px" height="50px" style="border-radius: 50%;">
-                    <h3 id="up">Spring Boot</h3>
-                </div></li>
-                <li><div class="cert2" style="display: flex; align-items: center;">
-                    <img src="git.png" width="50px" height="50px" style="border-radius: 50%;">
-                    <h3 id="up">GitHub</h3>
-                </div></li>
-                <li><div class="cert2" style="display: flex; align-items: center;">
-                    <img src="django.png" width="50px" height="50px" style="border-radius: 50%;">
-                    <h3 id="up">Django Framework</h3>
-                </div></li>
+    <!-- Page Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="logo" href="#">Portfolio</a>
+            <ul class="nav">
+                <li class="item">
+                    <a class="link" href="#home">Home</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#about">About</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#education">Education</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#projects">Projects</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#contact">Contact</a>
+                </li>
+                <!-- <li class="item ml-md-3">
+                    <a href="components.html" class="btn btn-primary">Components</a>
+                </li> -->
             </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
+            </a>
         </div>
-        <div class="s2">
-            <h4>DataBase Skills</h4>
-            <ul>
-                <li><div class="cert2" style="display: flex; align-items: center;">
-                    <img src="mysql.png" width="50px" height="50px" style="border-radius: 50%;">
-                    <h3 id="up">My SQL</h3>
-                </div></li>
-                <li><div class="cert2" style="display: flex; align-items: center;">
-                    <img src="mongodb.png" width="50px" height="50px" style="border-radius: 50%;">
-                    <h3 id="up">MongoDB</h3>
-                </div></li>
-            </ul>
-        </div>
-        <div class="s3">
-            <h4>Computational Languages Skills</h4>
-            <ul>
-                <li><div class="cert2" style="display: flex; align-items: center;">
-                    <img src="python.png" width="50px" height="50px" style="border-radius: 50%;">
-                    <h3 id="up">Python</h3>
-                </div></li>
-                <li><div class="cert2" style="display: flex; align-items: center;">
-                    <img src="java.png" width="50px" height="50px" style="border-radius: 50%;">
-                    <h3 id="up">Java</h3>
-                </div></li>
-                <li><div class="cert2" style="display: flex; align-items: center;">
-                    <img src="c.png" width="50px" height="50px" style="border-radius: 50%;">
-                    <h3 id="up">C</h3>
-                </div></li>
-            </ul>
-        </div>
-    </div>
-</div>
+    </nav><!-- End of Page Navbar -->
 
-<!--Projects Section-->
-<div class="projects" id="project">
-    <h2 id="projects" >Projects</h2>
-    <div class="project-list">
-        <div class="p1">
-            <h3>Automobile Management System</h3>
-            <div id="sp">
-                <h4 style="color: #f90040;margin-left: 15px;margin-bottom: 10px;">Description</h4>
-                <p style="margin-left: 25px;margin-bottom: 10px;word-break: break-all;">It acts as a centralized platform enabling administrators, sales representatives, and service technicians to handle vehicle inventory, data, and service requests seamlessly.</p>
-                <h4 style="color: #f90040;margin-left: 15px;margin-bottom: 10px;"> <a href="https://github.com/mohanyaswanthkumar/jfsdproject" target="_blank">GitHub Link </a></h4>
+    <!-- page header -->
+    <header id="home" class="header">
+        <div class="overlay"></div>
+        <div class="header-content container">
+            <h1 class="header-title">
+                <span class="up">HI!</span>
+                <span class="down">I am Bitra Mohan Yaswanth Kumar</span>
+            </h1>
+            <p class="header-subtitle">WEB DEVELOPER</p>
+
+            <a class="btn btn-primary" href="#projects">Visit My Works</a>
+        </div>
+    </header><!-- end of page header -->
+
+    <!-- about section -->
+    <section class="section pt-0" id="about">
+        <!-- container -->
+        <div class="container text-center">
+            <!-- about wrapper -->
+            <div class="about">
+                <div class="about-img-holder">
+                    <img src="assets/imgs/MYK.jpg" class="about-img"
+                        alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+                </div>
+                <div class="about-caption">
+                    <p class="section-subtitle">Who Am I ?</p>
+                    <h2 class="section-title mb-3">About Me</h2>
+                    <p>
+                        I am currently pursuing my B. Tech in Computer Science at KL University, with a deep passion for Cybersecurity and Web Development. My academic journey has provided me with a solid foundation in programming, algorithms, and data structures, while my personal projects and coursework have sparked my enthusiasm for creating innovative solutions.
+
+I am particularly fascinated by the potential of frontend and backend technologies to drive innovation and solve real-world problems. I enjoy developing user interface models, working on comprehensive web development projects, and staying updated with the latest technologies. This commitment helps me continuously expand my knowledge and skills in this exciting domain.
+
+In addition to my web development interests, I am also deeply engaged in the field of cybersecurity. My diverse experience in these areas has allowed me to successfully complete several projects, showcasing my ability to apply theoretical knowledge to practical challenges.
+                    </p>
+                    <a class="btn-rounded btn btn-outline-primary mt-4" href="assets/imgs/BITRA_MOHAN_YASWANTH_KUMAR_RESUME.pdf" download >Download CV</a>
+                </div>
+            </div><!-- end of about wrapper -->
+        </div><!-- end of container -->
+    </section> <!-- end of about section -->
+
+     <!-- pricing section -->
+     <section class="section" id="education">
+        <div class="container text-center">
+            <p class="section-subtitle">My Education Journey</p>
+            <h6 class="section-title mb-6">Education</h6>
+            <!-- row -->
+            <div class="pricing-wrapper">
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        
+                    </div>
+                    <div class="pricing-card-body">
+                        <h6 class="pricing-card-title">KL University</h6>
+                        <div class="pricing-card-list">
+                            <p>B.Tech Computer Science & Engineering</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Vijayawada, Andhra Pradesh</p>
+                            <p>CGPA: 9.59</p>
+                            <p>(Pursuing)</p>
+                        </div>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        
+                    </div>
+                    <div class="pricing-card-body">
+                        <h6 class="pricing-card-title">Narayana Junior College</h6>
+                        <div class="pricing-card-list">
+                            <p>Intermediate MPC</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Vijayawada, Andhra Pradesh</p>
+                            <p>Marks: 949/1000</p>
+                            <p><i class='far fa-calendar' style='font-size:30px;color:red'></i> June 2019 - March 2021</p>
+                            
+                        </div>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                       
+                    </div>
+                    <div class="pricing-card-body">
+                        <h6 class="pricing-card-title">Narayana E-techno Schools</h6>
+                        <div class="pricing-card-list">
+                            <p>Xth Standard SSC</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Chirala, Andhra Pradesh</p>
+                            <p>CGPA: 9.3</p>
+                            <p><i class='far fa-calendar' style='font-size:30px;color:red'></i> June 2018 - March 2019</p>
+                        </div>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div><!-- end of pricing wrapper -->
+        </div> <!-- end of container -->
+    </section>
+    
+<!-- end of pricing section -->
+
+    <!-- service section -->
+    <section class="section" id="service">
+        <div class="container text-center">
+            <p class="section-subtitle">What I Do ?</p>
+            <h6 class="section-title mb-6">Skills</h6>
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/html.png"
+                                alt="Icon for Adipisicing" class="icon">
+                            <h6 class="title">HTML</h6>
+                            <p class="subtitle">Expert in building semantic and accessible web pages using HTML5.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/css.png"
+                                alt="Icon for Sapiente" class="icon">
+                            <h6 class="title">CSS</h6>
+                            <p class="subtitle">Skilled in creating responsive and visually appealing designs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/js.png"
+                                alt="Icon for Placeat" class="icon">
+                            <h6 class="title">JavaScript</h6>
+                            <p class="subtitle">Proficient in modern JavaScript frameworks and libraries.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/reactjs.png"
+                                alt="Icon for Iusto" class="icon">
+                            <h6 class="title">React JS</h6>
+                            <p class="subtitle">Experienced in building dynamic and high-performance web apps.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/django.png"
+                                alt="Icon for Adipisicing" class="icon">
+                            <h6 class="title">Django Framework</h6>
+                            <p class="subtitle">Skilled in developing secure and scalable web applications.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/sprintboot.png"
+                                alt="Icon for Sapiente" class="icon">
+                            <h6 class="title">Spring Boot</h6>
+                            <p class="subtitle">Knowledgeable in creating robust backend systems.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/java.png"
+                                alt="Icon for Placeat" class="icon">
+                            <h6 class="title">Java</h6>
+                            <p class="subtitle">Skilled in object-oriented programming with Java.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/python.png"
+                                alt="Icon for Iusto" class="icon">
+                            <h6 class="title">Python</h6>
+                            <p class="subtitle">Experienced in backend development and data analysis with Python.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/dsa.png"
+                                alt="Icon for Adipisicing" class="icon">
+                            <h6 class="title">Data Structures and Algorithms</h6>
+                            <p class="subtitle">Proficient in implementing data structures and algorithms in various projects.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/oops.png"
+                                alt="Icon for Sapiente" class="icon">
+                            <h6 class="title">OOPs</h6>
+                            <p class="subtitle">Skilled in object-oriented programming principles.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/linux.png"
+                                alt="Icon for Placeat" class="icon">
+                            <h6 class="title">Linux</h6>
+                            <p class="subtitle">Proficient in Linux environment and shell scripting.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/mongodb.png"
+                                alt="Icon for Iusto" class="icon">
+                            <h6 class="title">MongoDB</h6>
+                            <p class="subtitle">Experienced in handling NoSQL databases.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/mysql.png"
+                                alt="Icon for Adipisicing" class="icon">
+                            <h6 class="title">MySQL</h6>
+                            <p class="subtitle">Experienced in database design and management with MySQL.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/figma.png"
+                                alt="Icon for Placeat" class="icon">
+                            <h6 class="title">Figma</h6>
+                            <p class="subtitle">Experienced in designing UI/UX with Figma.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/postman.png"
+                                alt="Icon for Iusto" class="icon">
+                            <h6 class="title">Postman</h6>
+                            <p class="subtitle">Efficient in API testing and development with Postman.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/git.png"
+                                alt="Icon for Adipisicing" class="icon">
+                            <h6 class="title">GitHub</h6>
+                            <p class="subtitle">Proficient in version control and collaboration with GitHub.</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end of row -->
+        </div>
+    </section>
+    
+    <style>
+        .icon {
+            max-width: 60px; /* Adjust this value as needed */
+        }
+    </style>
+    
+   <!-- end of service section -->
+
+    <!-- section -->
+    <section class="section-sm bg-primary">
+        <!-- container -->
+        <div class="container text-center text-sm-left">
+            <!-- row -->
+            <div class="row align-items-center">
+                <div class="col-sm offset-md-1 mb-4 mb-md-0">
+                    <h6 class="title text-light">Want to work with me?</h6>
+                    <p class="m-0 text-light">Always feel Free to Contact & Hire me</p>
+                </div>
+                <div class="col-sm offset-sm-2 offset-md-3">
+                    <a class="btn btn-lg my-font btn-light rounded" href="#contact" >Hire Me</a>
+                </div>
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </section> <!-- end of section -->
+
+   <!-- Projects Section -->
+<section class="section" id="projects">
+    <!-- container -->
+    <div class="container text-center">
+        <h6 class="section-title mb-6">Projects</h6>
+        <!-- project-card -->
+        <div class="blog-card">
+            <div class="blog-card-header">
+                <img src="assets/imgs/meet.png" class="blog-card-img" alt="Video Calling Web Application">
+            </div>
+            <div class="blog-card-body">
+                <h5 class="blog-card-title">Meet and chat</h5>
+                <p class="blog-card-caption">
+                    <a href="https://github.com/mohanyaswanthkumar/MeetAndChat" target="_blank">GitHub Link</a> <!-- Replace with actual link if available -->
+                </p>
+                <p>This project involves developing a web application that enables users to initiate and join video calls, utilizing Django for the backend and Zego Cloud for seamless video conferencing functionality. Key features include user authentication, real-time video calling, and an intuitive user interface.</p>
             </div>
         </div>
-        <div class="p2">
-            <h3>Food And Hospitality Management System</h3>
-            <div id="sp">
-                <h4 style="color: #f90040;margin-left: 15px;margin-bottom: 10px;">Description</h4>
-                <p style="margin-left: 25px;margin-bottom: 10px;word-break: break-all;">In this project, we have implemented features such as online food ordering and user carts, along with order status tracking, within the food and hospitality services sector.</p>
-                <h4 style="color: #f90040;margin-left: 15px;margin-bottom:10px;"><a href="https://github.com/mohanyaswanthkumar/mswd_project" target="_blank">GitHub Link </a></h4>
+        <!-- project-card -->
+        <div class="blog-card">
+            <div class="blog-card-header">
+                <img src="assets/imgs/chatgpt.png" class="blog-card-img" alt="ChatGPT Clone">
             </div>
-        </div>
-        <div class="p2">
-            <h3>Health Care And Well Being System</h3>
-            <div id="sp">
-                <h4 style="color: #f90040;margin-left: 15px;margin-bottom: 10px;">Description</h4>
-                <p style="margin-left: 25px;margin-bottom: 10px;word-break: break-all;">The primary focus of this project revolves around facilitating online appointment scheduling for patients with doctors, alongside enabling the retrieval of prescriptions from  their respective healthcare providers, with development conducted using the Django Framework</p>
-                <h4 style="color: #f90040;margin-left: 15px;margin-bottom: 10px;"><a href="https://github.com/mohanyaswanthkumar/hws_pfsd" target="_blank">GitHub Link </a></h4>
+            <div class="blog-card-body">
+                <h5 class="blog-card-title">ChatGPT Clone</h5>
+                <p class="blog-card-caption">
+                    <a href="https://github.com/yourusername/chatgpt_clone" target="_blank">GitHub Link</a>
+                </p>
+                <p>This project involves creating a clone of the ChatGPT application, focusing on natural language processing and user interaction capabilities, developed using modern web technologies.</p>
             </div>
-        </div>
-        <div class="p2">
-            <h3>Reciepe App</h3>
-            <div id="sp">
-                <h4 style="color: #f90040;margin-left: 15px;margin-bottom: 10px;">Description</h4>
-                <p style="margin-left: 25px;margin-bottom: 10px;word-break: break-all;">The primary focus of this project helps you find recipes you love with easy search and personalized suggestions. It's your go-to for meal ideas, cooking tips, and connecting with fellow foodies</p>
-                <h4 style="color: #f90040;margin-left: 15px;margin-bottom: 10px;"><a href="https://github.com/mohanyaswanthkumar/Reciepe_App" target="_blank">GitHub Link </a></h4>
+        </div><!-- end of project card -->
+        <!-- project-card -->
+        <div class="blog-card">
+            <div class="blog-card-header">
+                <img src="assets/imgs/img-1.jpg" class="blog-card-img" alt="Automobile Management System">
             </div>
-        </div>
-        <div class="p2">
-            <h3>Fitness Trainer App</h3>
-            <div id="sp">
-                <h4 style="color: #f90040;margin-left: 15px;margin-bottom: 10px;">Description</h4>
-                <p style="margin-left: 25px;margin-bottom: 10px;word-break: break-all;">The primary focus of this project revolves around facilitating online appointment scheduling for patients with doctors, alongside enabling the retrieval of prescriptions from  their respective healthcare providers, with development conducted using the Django Framework</p>
-                <h4 style="color: #f90040;margin-left: 15px;margin-bottom: 10px;"><a href="https://github.com/mohanyaswanthkumar/Fitness_App" target="_blank">GitHub Link </a></h4>
+            <div class="blog-card-body">
+                <h5 class="blog-card-title">Automobile Management System</h5>
+                <p class="blog-card-caption">
+                    <a href="https://github.com/mohanyaswanthkumar/jfsdproject" target="_blank">GitHub Link</a>
+                </p>
+                <p>It acts as a centralized platform enabling administrators, sales representatives, and service technicians to handle vehicle inventory, data, and service requests seamlessly.</p>
             </div>
-        </div>
-        <div class="p2">
-            <h3>CryptoCurrency Price Tracking System</h3>
-            <div id="sp">
-                <h4 style="color: #f90040;margin-left: 15px;margin-bottom: 10px;">Description</h4>
-                <p style="margin-left: 25px;margin-bottom: 10px;word-break: break-all;">The primary focus of this project revolves around facilitating online appointment scheduling for patients with doctors, alongside enabling the retrieval of prescriptions from  their respective healthcare providers, with development conducted using the Django Framework</p>
-                <h4 style="color: #f90040;margin-left: 15px;margin-bottom: 10px;"><a href="https://github.com/mohanyaswanthkumar/CryptoCurrency_tracker" target="_blank">GitHub Link </a></h4>
+        </div><!-- end of project card -->
+
+        <!-- project-card -->
+        <div class="blog-card">
+            <div class="blog-card-header">
+                <img src="assets/imgs/food.png" class="blog-card-img" alt="Food And Hospitality Management System">
             </div>
-        </div>
-    </div>
-</div>
-<!--Follow Me on-->
-<div class="details" id="contact">
-    <div>
-        <h3>Contact Me</h3>
-<p>
-    &#128231; bitramohanyaswanthkumar@gmail.com <br>
-    &#128241; +91 7981434355
-</p>
-    </div>
-    <div>
-        <h3>Follow me on </h3>
-        <a href="https://www.facebook.com/bitra.mohanyaswanthkumar/" target="_blank">
-            <i class="fab fa-facebook fa-3x"></i>
-        </a>
-        <a href="https://github.com/mohanyaswanthkumar" target="_blank">
-            <i class="fab fa-github fa-3x"></i>
-        </a>
-        <a href="https://www.instagram.com/mykchats_1222/" target="_blank">
-            <i class="fab fa-instagram fa-3x"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/bitra-mohan-yaswanth-kumar-315681226/" target="_blank">
-            <i class="fab fa-linkedin fa-3x"></i>
-        </a>
-    </div>
-</div>
+            <div class="blog-card-body">
+                <h5 class="blog-card-title">Food And Hospitality Management System</h5>
+                <p class="blog-card-caption">
+                    <a href="https://github.com/mohanyaswanthkumar/mswd_project" target="_blank">GitHub Link</a>
+                </p>
+                <p>In this project, we have implemented features such as online food ordering and user carts, along with order status tracking, within the food and hospitality services sector.</p>
+            </div>
+        </div><!-- end of project card -->
+
+        <!-- project-card -->
+        <div class="blog-card">
+            <div class="blog-card-header">
+                <img src="assets/imgs/health.png" class="blog-card-img" alt="Health Care And Well Being System">
+            </div>
+            <div class="blog-card-body">
+                <h5 class="blog-card-title">Health Care And Well Being System</h5>
+                <p class="blog-card-caption">
+                    <a href="https://github.com/mohanyaswanthkumar/hws_pfsd" target="_blank">GitHub Link</a>
+                </p>
+                <p>The primary focus of this project revolves around facilitating online appointment scheduling for patients with doctors, alongside enabling the retrieval of prescriptions from their respective healthcare providers, with development conducted using the Django Framework.</p>
+            </div>
+        </div><!-- end of project card -->
+
+        <!-- project-card -->
+        <div class="blog-card">
+            <div class="blog-card-header">
+                <img src="assets/imgs/reciepe.png" class="blog-card-img" alt="Recipe App">
+            </div>
+            <div class="blog-card-body">
+                <h5 class="blog-card-title">Recipe App</h5>
+                <p class="blog-card-caption">
+                    <a href="https://github.com/mohanyaswanthkumar/Reciepe_App" target="_blank">GitHub Link</a>
+                </p>
+                <p>The primary focus of this project helps you find recipes you love with easy search and personalized suggestions. It's your go-to for meal ideas, cooking tips, and connecting with fellow foodies.</p>
+            </div>
+        </div><!-- end of project card -->
+
+        <!-- project-card -->
+        <div class="blog-card">
+            <div class="blog-card-header">
+                <img src="assets/imgs/gym.png" class="blog-card-img" alt="Fitness Trainer App">
+            </div>
+            <div class="blog-card-body">
+                <h5 class="blog-card-title">Fitness Trainer App</h5>
+                <p class="blog-card-caption">
+                    <a href="https://github.com/mohanyaswanthkumar/Fitness_App" target="_blank">GitHub Link</a>
+                </p>
+                <p>The primary focus of this project revolves around facilitating online appointment scheduling for patients with doctors, alongside enabling the retrieval of prescriptions from their respective healthcare providers, with development conducted using the Django Framework.</p>
+            </div>
+        </div><!-- end of project card -->
+
+        <!-- project-card -->
+        <div class="blog-card">
+            <div class="blog-card-header">
+                <img src="assets/imgs/crypto.png" class="blog-card-img" alt="CryptoCurrency Price Tracking System">
+            </div>
+            <div class="blog-card-body">
+                <h5 class="blog-card-title">CryptoCurrency Price Tracking System</h5>
+                <p class="blog-card-caption">
+                    <a href="https://github.com/mohanyaswanthkumar/CryptoCurrency_tracker" target="_blank">GitHub Link</a>
+                </p>
+                <p>The primary focus of this project revolves around facilitating online appointment scheduling for patients with doctors, alongside enabling the retrieval of prescriptions from their respective healthcare providers, with development conducted using the Django Framework.</p>
+            </div>
+        </div><!-- end of project card -->
+    </div><!-- end of container -->
+</section><!-- end of projects section -->
+
+
+    <!-- contact section -->
+    <section class="section" id="contact">
+        <div class="container text-center">
+            <p class="section-subtitle">How can you communicate?</p>
+            <h6 class="section-title mb-5">Contact Me</h6>
+            <!-- contact form -->
+            <form action="mailto:bitramohanyaswanthkumar@gmail.com" method="post" enctype="text/plain" target="_blank" class="contact-form col-md-10 col-lg-8 m-auto">
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <input type="text" size="50" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <input type="email" class="form-control" placeholder="Enter Email" requried>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <textarea name="comment" id="comment" rows="6" class="form-control"
+                            placeholder="Write Something"></textarea>
+                    </div>
+                    <div class="form-group col-sm-12 mt-3">
+                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
+                    </div>
+                </div>
+            </form><!-- end of contact form -->
+        </div><!-- end of container -->
+    </section><!-- end of contact section -->
+
+    <!-- footer -->
+    <div class="container">
+        <footer class="footer">
+            <h6 class="section-title social-links text-center m-auto ml-sm-auto mb-5">Follow me on</h6>
+            <div class="social-links text-center m-auto ml-sm-auto">
+                <a href="https://www.facebook.com/bitra.mohanyaswanthkumar/" class="link" target="_blank"><i class="fab fa-facebook fa-3x"></i></a>
+                <a href="https://github.com/mohanyaswanthkumar" class="link" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+                <a href="https://www.instagram.com/mykchats_1222/" class="link" target="_blank"><i class="fab fa-instagram fa-3x"></i></a>
+                <a href="https://www.linkedin.com/in/bitra-mohan-yaswanth-kumar-315681226/" class="link" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+            </div>
+            
+        </footer>
+    </div> <!-- end of page footer -->
+
+    <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Meyawo js -->
+    <script src="assets/js/meyawo.js"></script>
+
 </body>
+
 </html>
