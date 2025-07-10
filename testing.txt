@@ -1,1 +1,2 @@
 hi this is created to check jenkins freestyle pipeline
+this time new updated with sonarqube setup
